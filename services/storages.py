@@ -1,7 +1,9 @@
+import os
 import json
 
 class Storages:
-    filepath: str = "storages/database.json" # storage of list servers
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    filepath: str = os.path.join(current_dir, "../storages/database.json") # storage of list servers
 
     def init(self, data: list = []):
         with open(self.filepath, "w") as file:
